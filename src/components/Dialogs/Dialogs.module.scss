@@ -1,0 +1,115 @@
+.messages {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    min-height: 88vh;
+}
+
+.dialogs {
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.history {
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    border-radius: 0 4px 4px 0;
+}
+
+//! DialogItem
+
+.dialog {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 1px 0 0 #d7d8db;
+    align-items: center;
+    .photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        justify-self: center;
+        background-color: #b2b2c9;
+    }
+    .name {
+        color: #55677d;
+        font-size: 18px;
+        margin-left: 30px;
+    }
+}
+
+a.active {
+    background-color: #5b88bd;
+    .name {
+        color: #fff;
+    }
+}
+
+.history__row {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    // justify-content: flex-end;
+    .dialog__area {
+        flex: 1 1 auto;
+        font-family: "Helvetica Neue";
+        font-size: 20px;
+        font-weight: normal;
+        min-width: 580px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        p {
+            max-width: 380px;
+            word-wrap: break-word;
+            margin-bottom: 12px;
+            line-height: 24px;
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+        .from__me {
+            text-align: right;
+            background: #dadada;
+            align-self: flex-end;
+            color: #55677d;
+        }
+        .from__them {
+            background: #dadada;
+            color: #55677d;
+        }
+    }
+    .submit {
+        // justify-self: flex-end;
+        box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        textarea {
+            width: 80%;
+            border-radius: 11px;
+            font-style: italic;
+            color: #55677d;
+            font-size: 18px;
+            background-color: #dadada;
+            padding: 10px;
+            box-shadow: 0 0 4px #ccc;
+        }
+        .btn {
+            text-align: right;
+            a {
+                display: inline-block;
+                padding: 10px 15px;
+                background-color: #edeef0;
+                box-shadow: 2px 2px 2px 2px #b2b2c9;
+                border-radius: 4px;
+                color: #55677d;
+            }
+        }
+    }
+}

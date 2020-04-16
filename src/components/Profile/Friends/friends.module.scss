@@ -1,0 +1,29 @@
+.friends {
+    background-color: #fff;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.title {
+    font-size: 1.2em;
+    grid-column: 1 / 4;
+    color: #55677d;
+}
+
+.friend {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    .image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #b2b2c9;
+    }
+    .name {
+        margin-top: 10px;
+        color: #55677d;
+    }
+}

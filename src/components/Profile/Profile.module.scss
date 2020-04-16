@@ -1,0 +1,64 @@
+.profile {
+    padding: 15px;
+}
+
+.profile__row {
+    display: flex;
+    margin: 0 -7px;
+    flex-wrap: wrap;
+    .left > div {
+        border-radius: 4px;
+        box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    }
+    .right > div {
+        border-radius: 4px;
+        box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    }
+}
+.left {
+    flex: 0 1 30%;
+    padding: 0 7px;
+}
+
+.right {
+    flex: 0 1 70%;
+    padding: 0 7px;
+}
+
+.avatar {
+    background-color: #ffffff;
+    padding: 15px;
+    display: grid;
+    grid-gap: 15px;
+    margin-bottom: 14px;
+    .avatar__image {
+        background-color: #b2b2c9;
+        width: 100%;
+        height: 250px;
+    }
+    .edit {
+        background-color: #edeef0;
+        box-shadow: 2px 2px 2px 2px #b2b2c9;
+        width: 100%;
+        height: 40px;
+        border-radius: 4px;
+        text-align: center;
+        align-content: center;
+        display: grid;
+        span {
+            color: #55677d;
+        }
+    }
+}
+
+.description {
+    margin-bottom: 14px;
+    padding: 20px;
+    min-height: 250px;
+    background-color: #fff;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 3em;
+}

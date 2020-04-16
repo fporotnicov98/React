@@ -1,0 +1,29 @@
+.posts {
+    background-color: #fff;
+    padding: 15px;
+    textarea {
+        padding: 15px;
+        font-style: italic;
+        width: 100%;
+        background-color: #edeef0;
+        color: #55677d;
+        font-size: 1em;
+        margin: 15px 0;
+    }
+    .btn {
+        text-align: right;
+        a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #EDEEF0;
+            box-shadow: 2px 2px 2px 2px #b2b2c9;
+            border-radius: 4px;
+            color: #55677d;
+        }
+    }
+    .title {
+        font-size: 1.2em;
+        grid-column: 1 / 4;
+        color: #55677d;
+    }
+}
