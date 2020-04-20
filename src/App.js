@@ -18,8 +18,8 @@ const App = (props) => {
           <div className={style.container}>
             <div className={style.main__row}>
               <Navbar state={props.state.navigations} />
-              <Route exact path='/profile' render={() => <Profile state={props.state.profilePage} />} />
-              <Route path='/messages' render={() => <Dialogs state={props.state.dialogsPage} />} />
+              <Route exact path='/profile' render={() => <Profile profilePage={props.state.profilePage} updateNewPostText={props.updateNewPostText} addPost={props.addPost}/>} />
+              <Route path='/messages' render={() => <Dialogs state={props.state.dialogsPage} addMess={props.addMess}/>} />
             </div>
           </div>
         </main>

@@ -1,15 +1,16 @@
-
 .post {
     box-shadow: 0 0 2px 2px #ccc;
     padding: 8px;
     color: #55677d;
     margin: 15px 0 0 0;
-    display: grid;
-    grid-template-columns: 1fr 8fr 2fr;
+    display: flex;
     align-items: center;
+    max-width: 612.713px;
+    word-wrap: break-word;
 }
 
 .image {
+    flex: 0 0 50px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -18,14 +19,22 @@
 
 .text {
     font-style: italic;
-    margin-left: 20px;
+    padding: 0 20px;
+    flex: 1 1 auto;
 }
 
 .like {
+    text-align: right;
+    flex: 0 0 80px;
     color: #55677d;
-    justify-self: end;
     font-style: italic;
+
+    a {
+        color: #55677d;
+    }
+
     span {
+        color: #55677d;
         font-size: 80%;
         margin: 0 10px;
     }

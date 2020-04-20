@@ -27,11 +27,15 @@ const Profile = (props) => {
             <div className={style.profile__row}>
                 <div className={style.left}>
                     <Avatar />
-                    <Friends frends={props.state.frends}/>
+                    <Friends frends={props.profilePage.frends} />
                 </div>
                 <div className={style.right}>
                     <Desc />
-                    <MyPosts posts={props.state.posts}/>
+                    <MyPosts
+                        posts={props.profilePage.posts}
+                        newPostText={props.profilePage.newPostText}
+                        updateNewPostText={props.updateNewPostText}
+                        addPost={props.addPost} />
                 </div>
             </div>
         </section >
