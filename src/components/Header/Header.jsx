@@ -1,11 +1,12 @@
 import React from 'react'
 import style from'./header.module.scss';
+import { NavLink } from 'react-router-dom';
 
 
 const Header = () => {
     return (
         <header className={style.header}>
-            <a href="#s" className={style.logo}>VKompe</a>
+            <NavLink to='/' className={style.logo}>VKompe</NavLink>
         </header>
     )
 }

@@ -4,9 +4,8 @@ import './normalize.scss';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-// import Footer from './components/Footer/Footer';
-import Dialogs from './components/Dialogs/Dialogs';
 import { Route } from 'react-router-dom';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 const App = (props) => {
@@ -17,8 +16,8 @@ const App = (props) => {
         <div className={style.container}>
           <div className={style.main__row}>
             <Navbar store={props.store} />
-            <Route exact path='/profile' render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
-            <Route path='/messages' render={() => <Dialogs store={props.store} />} />
+            <Route exact path='/profile' render={() => <Profile store={props.store} />} />
+            <Route path='/messages' render={() => <DialogsContainer store={props.store} />} />
           </div>
         </div>
       </main>

@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Profile.module.scss';
-import MyPosts from './MyPosts/MyPosts';
 import Friends from './Friends/Friends';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 
 const Avatar = () => {
@@ -22,19 +22,17 @@ const Desc = () => {
 }
 
 const Profile = (props) => {
+    debugger;
     return (
         <section className={style.profile}>
             <div className={style.profile__row}>
                 <div className={style.left}>
                     <Avatar />
-                    <Friends frends={props.profilePage.frends} />
+                    <Friends store={props.store} />
                 </div>
                 <div className={style.right}>
                     <Desc />
-                    <MyPosts
-                        posts={props.profilePage.posts}
-                        newPostText={props.profilePage.newPostText}
-                        dispatch={props.dispatch} />
+                    <MyPostsContainer store={props.store}/>
                 </div>
             </div>
         </section >
