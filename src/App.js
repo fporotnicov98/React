@@ -16,9 +16,9 @@ const App = (props) => {
       <main className={style.main}>
         <div className={style.container}>
           <div className={style.main__row}>
-            <Navbar state={props.state.navigations} />
+            <Navbar store={props.store} />
             <Route exact path='/profile' render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
-            <Route path='/messages' render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />} />
+            <Route path='/messages' render={() => <Dialogs store={props.store} />} />
           </div>
         </div>
       </main>
