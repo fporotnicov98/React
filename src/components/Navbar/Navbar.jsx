@@ -4,8 +4,8 @@ import NavItem from './NavItem/NavItem'
 
 const Navbar = (props) => {
 
-    let sidebar = props.store.getState().sidebar;
-    let navElement = sidebar.link.map(item => <NavItem name={item.name} path={item.path} />)
+    let state = props.sidebar;
+    let navElement = state.link.map(item => <NavItem name={item.name} key={item.id} path={item.path} />)
     return (
         <section className={style.navbar}>
             <ul>
@@ -14,5 +14,4 @@ const Navbar = (props) => {
         </section>
     )
 }
-
 export default Navbar;

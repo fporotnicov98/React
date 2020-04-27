@@ -4,9 +4,9 @@ import FrendsItem from './FrendsItem/FrendsItem'
 
 const Friends = (props) => {
 
-    let frends = props.store.getState().profilePage.frends;
+    let state = props.profilePage;
 
-    let frendsElement = frends.map(item => <FrendsItem name={item.name} />)
+    let frendsElement = state.frends.map(item => <FrendsItem name={item.name} />)
 
     return (
         <div className={style.friends}>

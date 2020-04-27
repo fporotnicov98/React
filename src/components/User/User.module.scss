@@ -1,0 +1,86 @@
+.user {
+    padding: 15px;
+    min-height: 88vh;
+}
+
+.user__row {
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    .user__item {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 1px 0 0 #d7d8db;
+        .avatar {
+            flex: 0 0 100px;
+            margin-left: 30px;
+            a {
+                display: block;
+                text-align: center;
+                color: #55677d;
+                .img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .desc {
+            text-align: center;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #55677d;
+            .fio {
+                font-size: 1.4em;
+                margin-bottom: 15px;
+                font-weight: 700;
+            }
+            .info {
+                margin-bottom: 15px;
+                color: #929ba7;
+            }
+            .to_write {
+                a {
+                    color: #2a5885;
+                    font-size: 0.8em;
+                }
+            }
+        }
+        .follow {
+            flex: 0 0 100px;
+            text-align: center;
+            margin-right: 30px;
+            a {
+                width: 130px;
+                display: inline-block;
+                padding: 10px 15px;
+                background-color: #edeef0;
+                box-shadow: 2px 2px 2px 2px #b2b2c9;
+                border-radius: 4px;
+                color: #55677d;
+            }
+        }
+    }
+}
+
+.show {
+    width: 300px;
+    margin: 0 auto; 
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    border-radius: 4px; 
+    font-size: 1.4em;
+    a {
+        color: #55677d;
+        font-weight: 700;
+    }
+}

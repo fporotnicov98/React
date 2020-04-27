@@ -91,6 +91,7 @@ a.active {
         align-items: center;
         justify-content: space-evenly;
         textarea {
+            resize: none;
             width: 80%;
             border-radius: 11px;
             font-style: italic;
