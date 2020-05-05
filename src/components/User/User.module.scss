@@ -23,8 +23,8 @@
                 text-align: center;
                 color: #55677d;
                 .img {
-                    width: 100px;
-                    height: 100px;
+                    width: 65px;
+                    height: 65px;
                     border-radius: 50%;
                     object-fit: cover;
                 }
@@ -38,6 +38,9 @@
             justify-content: space-between;
             color: #55677d;
             .fio {
+                a {
+                    color: #55677d;
+                }
                 font-size: 1.4em;
                 margin-bottom: 15px;
                 font-weight: 700;
@@ -83,4 +86,24 @@
         color: #55677d;
         font-weight: 700;
     }
+}
+
+.pages {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    a {
+        color: #55677d;
+        &:last-child {
+            margin: 0;
+        }
+        margin-right: 20px;
+    }
+    .page_select {
+        font-weight: bold;
+    }
+}
+
+.preloader {
+    text-align: center;
 }

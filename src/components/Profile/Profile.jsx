@@ -1,7 +1,6 @@
 import React from 'react'
 import style from './Profile.module.scss';
 import Friends from './Friends/Friends';
-import MyPostsContainer from './MyPosts/MyPostsContainer';
 import MyPosts from './MyPosts/MyPosts';
 
 
@@ -22,22 +21,24 @@ const Desc = () => {
     )
 }
 
-const Profile = (props) => {
-    return (
-        <section className={style.profile}>
-            <div className={style.profile__row}>
-                <div className={style.left}>
-                    <Avatar />
-                    <Friends profilePage={props.profilePage}/>
+class Profile extends React.Component {
+    render() {
+        return (
+            <section className={style.profile}>
+                <div className={style.profile__row}>
+                    <div className={style.left}>
+                        <Avatar />
+                        <Friends profilePage={this.props.profilePage} />
+                    </div>
+                    <div className={style.right}>
+                        <Desc />
+                        <MyPosts profilePage={this.props.profilePage} addPost={this.props.addPost} updateNewPostText={this.props.updateNewPostText} />
+                    </div>
                 </div>
-                <div className={style.right}>
-                    <Desc />
-                    <MyPosts profilePage={props.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
-                </div>
-            </div>
-        </section >
-    )
-}
+            </section >
+        )
+    }
+};
 
 
 export default Profile;

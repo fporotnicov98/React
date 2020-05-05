@@ -14,13 +14,14 @@ const MyPosts = (props) => {
 		let post = event.target.value;
 		props.updateNewPostText(post);
 	}
+
 	return (
 		<div className={style.posts}>
 			<div className={style.title}>My posts</div>
 			<textarea onChange={onPostChange} value={state.newPostText} />
 			<div className={style.btn} onClick={onAddPost} ><a href="#s">Publish</a></div>
 			{postElements}
-		</div>
+		</div>	
 	)
 }
 

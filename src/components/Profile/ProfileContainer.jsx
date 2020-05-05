@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { addPostActionCreator, updateNewPostTextActionCreator } from '../../Redux/profile-reducer'
 import Profile from './Profile'
+import { setUsersAC } from '../../Redux/user-reducer'
 
 
 let mapStateToProps = (state) => {
@@ -12,7 +13,8 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
 	return {
 		addPost: () => { dispatch(addPostActionCreator()) },
-		updateNewPostText: (post) => { dispatch(updateNewPostTextActionCreator(post)) }
+		updateNewPostText: (post) => { dispatch(updateNewPostTextActionCreator(post)) },
+		setPosts: (users) => {dispatch(setUsersAC(users))}
 	}
 }
 
