@@ -1,13 +1,28 @@
 .header {
     background-color: #4a76a8;
     padding: 15px;
-    display: grid;
-    align-content: center;
-}
-
-.logo {
-    text-align: center;
-    text-shadow: 0 0 10px#000;
-    color: #bbc2df;
-    font-size: 2em;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            margin-left: 30px;
+            text-align: center;
+            text-shadow: 0 0 10px#000;
+            color: #bbc2df;
+            font-size: 2em;
+        }
+        .login {
+            color: #bbc2df;
+            font-size: 1.3em;
+            text-shadow: 0 0 4px #000;
+            a {
+                color: #bbc2df;
+                font-size: 1.3em;
+                text-shadow: 0 0 4px #000;
+            }
+        }
+    }
 }

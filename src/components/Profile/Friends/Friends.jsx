@@ -7,7 +7,7 @@ const Friends = (props) => {
             <div className={style.title}>Friends</div>
             {
                 props.profilePage.frends.map(item =>
-                    <div className={style.friend}>
+                    <div key={item.id} className={style.friend}>
                         <div className={style.image}></div>
                         <div className={style.name}>{item.name}</div>
                     </div>

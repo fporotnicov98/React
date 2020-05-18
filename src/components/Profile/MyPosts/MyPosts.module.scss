@@ -28,3 +28,48 @@
         color: #55677d;
     }
 }
+
+.post {
+    box-shadow: 0 0 2px 2px #ccc;
+    padding: 8px;
+    color: #55677d;
+    margin: 15px 0 0 0;
+    display: flex;
+    align-items: center;
+    max-width: 612.713px;
+}
+
+.image {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #b2b2c9;
+}
+
+.text {
+    word-wrap: break-word;
+    font-style: italic;
+    padding: 0 20px;
+    flex: 1 0 auto;
+    max-width: 460px;
+
+}
+
+.like {
+    text-align: right;
+    flex: 0 0 70px;
+    color: #55677d;
+    font-style: italic;
+
+    a {
+        color: #55677d;
+    }
+
+    span {
+        cursor: pointer;
+        color: #55677d;
+        font-size: 80%;
+        margin: 0 10px;
+    }
+}

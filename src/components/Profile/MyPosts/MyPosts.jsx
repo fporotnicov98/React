@@ -1,11 +1,9 @@
 import React from 'react'
 import style from './MyPosts.module.scss'
-import Post from './Post/Post'
 
 const MyPosts = (props) => {
 	let state = props.profilePage;
-	let postElements = state.posts.map(item => <Post text={item.text} key={item.id} likeCount={item.likeCount} />);
-	
+
 	let onAddPost = () => {
 		props.addPost();
 	};
@@ -20,8 +18,15 @@ const MyPosts = (props) => {
 			<div className={style.title}>My posts</div>
 			<textarea onChange={onPostChange} value={state.newPostText} />
 			<div className={style.btn} onClick={onAddPost} ><a href="#s">Publish</a></div>
-			{postElements}
-		</div>	
+			{
+				state.posts.map(item =>
+					<div key={item.id} className={style.post}>
+						<div className={style.image}></div>
+						<div className={style.text}>{item.text}</div>
+						<div className={style.like} onClick={() => { props.setLike(item.id) }}>{item.likeCount}<span><i className="fas fa-heart"></i></span></div>
+					</div>
+				)}
+		</div>
 	)
 }
 

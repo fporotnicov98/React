@@ -7,12 +7,13 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UserContainer from './components/User/UserContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 
 const App = (props) => {
   return (
     <div className={style.wrapper}>
-      <Header />
+      <HeaderContainer />
       <main className={style.main}>
         <div className={style.container}>
           <div className={style.main__row}>
@@ -20,8 +21,8 @@ const App = (props) => {
               <NavbarContainer />
             </div>
             <div className={style.body}>
-              <Route exact path='/friends' render={() => <UserContainer />} />
-              <Route exact path='/profile' render={() => <ProfileContainer />} />
+              <Route path='/friends' render={() => <UserContainer />} />
+              <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
               <Route path='/messages' render={() => <DialogsContainer />} />
             </div>
 
