@@ -23,20 +23,21 @@ const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST:
-            let newPost = {
-                id: 0,
-                text: state.newPostText,
-                likeCount: 0,
-            };
-            return {
-                ...state,
-                posts: [...state.posts.map(item => {
-                    item.id++
-                    return { ...item }
-                }),
-                    newPost],
-                newPostText: ''
-            };
+            if (!(!action.enterText && action.enterText.length < 8)) {
+                let newPost = {
+                    id: 0,
+                    text: action.enterText,
+                    likeCount: 0,
+                };
+                return {
+                    ...state,
+                    posts: [...state.posts.map(item => {
+                        item.id++
+                        return { ...item }
+                    }), newPost],
+                };
+            } else alert('Нужно написать не меньше 8 символов')
+            break;
         case UPDATE_NEW_POST_TEXT:
             return {
                 ...state,
@@ -67,7 +68,7 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPost = (enterText) => ({ type: ADD_POST });
+export const addPost = (enterText) => ({ type: ADD_POST, enterText });
 export const updateNewPostText = (value) => ({ type: UPDATE_NEW_POST_TEXT, newText: value, });
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 export const setLike = (postId) => ({ type: SET_LIKE, postId });

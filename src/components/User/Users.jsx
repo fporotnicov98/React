@@ -1,10 +1,8 @@
 import React from 'react'
 import style from './User.module.scss'
-import user from './../../asets/images/user.png'
+import photo from './../../asets/images/user.png'
 import { NavLink } from 'react-router-dom';
-import * as axios from 'axios';
 import { followApi } from '../../api/api';
-
 
 let Users = (props) => {
 
@@ -17,34 +15,26 @@ let Users = (props) => {
         <section className={style.user}>
             <div className={style.user__row}>
                 {
-                    props.users.map(u =>
-                        <div key={u.id} className={style.user__item}>
+                    props.users.map(user =>
+                        <div key={user.id} className={style.user__item}>
                             <div className={style.avatar}>
-                                <NavLink to={'/profile/' + u.id}>
-                                    <img className={style.img} src={u.photos.small != null ? u.photos.small : user} alt="" />
+                                <NavLink to={'/profile/' + user.id}>
+                                    <img className={style.img} src={user.photos.small != null ? user.photos.small : photo} alt="" />
                                 </NavLink>
                             </div>
                             <div className={style.desc}>
-                                <div className={style.fio}><NavLink to={'/profile/' + u.id}>{u.name}</NavLink></div>
+                                <div className={style.fio}><NavLink to={'/profile/' + user.id}>{user.name}</NavLink></div>
                                 {/* <div className={style.info}>{u.location.city}, {u.location.country}</div> */}
                                 <div className={style.to_write}><a href="#s">Write message</a></div>
                             </div>
                             <div className={style.follow}>
-                                {u.followed
-                                    ? <a onClick={() => {
-                                        followApi.setUnFollow(u.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.unFollow(u.id)
-                                            }
-                                        })
-                                    }} href="#s">UNFOLLOW</a>
-                                    : <a onClick={() => {
-                                        followApi.setFollow(u.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.follow(u.id)
-                                            }
-                                        })
-                                    }} href="#s">FOLLOW</a>}
+                                {user.followed
+                                    ? <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                                        props.unFollow(user.id)
+                                    }}>UNFOLLOW</button>
+                                    : <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                                        props.follow(user.id)
+                                    }}>FOLLOW</button>}
                             </div>
                         </div>
                     )
