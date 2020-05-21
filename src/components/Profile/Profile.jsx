@@ -3,6 +3,7 @@ import style from './Profile.module.scss';
 import Friends from './Friends/Friends';
 import MyPosts from './MyPosts/MyPosts';
 import Preloader from '../common/preloader/Preloader';
+// import { Redirect } from 'react-router-dom';
 
 
 const Avatar = (props) => {
@@ -34,7 +35,9 @@ const Desc = (props) => {
 }
 
 class Profile extends React.Component {
+    
     render() {
+        
         if (!this.props.profile) {
             return <Preloader />
         } else

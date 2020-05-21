@@ -1,3 +1,5 @@
+import { profileApi } from "../api/api";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_POSTS = 'SET-POSTS';
@@ -74,3 +76,9 @@ export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const setLike = (postId) => ({ type: SET_LIKE, postId });
 
 export default profileReducer;
+
+export const getProfile = (userId) => (dispatch) => {
+    profileApi.getProfile(userId).then(data => {
+        dispatch(setUserProfile(data));
+    })
+}

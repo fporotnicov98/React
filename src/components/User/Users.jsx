@@ -2,7 +2,7 @@ import React from 'react'
 import style from './User.module.scss'
 import photo from './../../asets/images/user.png'
 import { NavLink } from 'react-router-dom';
-import { followApi } from '../../api/api';
+// import { followApi } from '../../api/api';
 
 let Users = (props) => {
 
@@ -44,7 +44,7 @@ let Users = (props) => {
                 {
                     pages.map(item => {
                         return (
-                            <a className={props.currentPage === item && style.page_select} href='#s' onClick={() => { props.onPageChanged(item) }}> {item}</a>
+                            <a key={item.id} className={props.currentPage === item && style.page_select} href='#s' onClick={() => { props.onPageChanged(item) }}> {item}</a>
                         )
                     })
                 }

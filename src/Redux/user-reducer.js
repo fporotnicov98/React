@@ -1,5 +1,4 @@
 import { userApi, followApi } from "../api/api";
-import { act } from "react-dom/test-utils";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';

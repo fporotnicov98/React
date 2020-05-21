@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './App.module.scss';
 import './normalize.scss';
-import Header from './components/Header/Header';
+// import Header from './components/Header/Header';
 import { Route } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UserContainer from './components/User/UserContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import Login from './components/Login/Login';
 
 
 const App = (props) => {
@@ -24,6 +25,7 @@ const App = (props) => {
               <Route path='/friends' render={() => <UserContainer />} />
               <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
               <Route path='/messages' render={() => <DialogsContainer />} />
+              <Route path='/login' render={() => <Login />} />
             </div>
 
           </div>
