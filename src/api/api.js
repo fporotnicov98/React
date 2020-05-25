@@ -13,7 +13,7 @@ export const userApi = {
         return instance.get(`/users?page=${currentPage}&count=${pageSize}}`)
             .then(Response => Response.data)
     }
-} 
+}
 
 export const followApi = {
     setUnFollow(userId) {
@@ -29,13 +29,20 @@ export const followApi = {
 export const authApi = {
     getAuth() {
         return instance.get(`/auth/me`)
-        .then(Response => Response.data)
+            .then(Response => Response.data)
     }
 }
 
 export const profileApi = {
     getProfile(userId) {
         return instance.get(`/profile/${userId}`)
-        .then(Response => Response.data)
+            .then(Response => Response.data)
+    },
+    getProfileStatus(userId) {
+        return instance.get(`/profile/status/${userId}`)
+            .then(Response => Response.data)
+    },
+    updateProfileStatus(status) {
+        return instance.put(`/profile/status`, { status: status })
     }
 }

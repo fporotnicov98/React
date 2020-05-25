@@ -1,10 +1,9 @@
 import { connect } from 'react-redux'
 import React from 'react'
-import { addPost, updateNewPostText, setLike, getProfile } from '../../Redux/profile-reducer'
+import { addPost, updateNewPostText, setLike, getProfile, getProfileStatus, updateProfileStatus } from '../../Redux/profile-reducer'
 import Profile from './Profile'
-// import * as axios from 'axios'
-import { withRouter, Redirect } from 'react-router-dom'
-// import { profileApi } from '../../api/api'
+import { withRouter } from 'react-router-dom'
+import { compose } from 'redux'
 
 class ProfileContainer extends React.Component {
 	componentDidMount() {
@@ -13,12 +12,14 @@ class ProfileContainer extends React.Component {
 			userId = 7095
 		}
 		this.props.getProfile(userId);
+		// setTimeout(() => {
+		this.props.getProfileStatus(userId);
+		// }, 1000);
 	}
 	render() {
-		if (this.props.isAuth === false) return <Redirect to='/login'/> 
 		return (
 			<Profile
-				{...this.props}xt={this.props.updateNewPostText}
+				{...this.props} status={this.props.status} updateProfileStatus={this.props.updateProfileStatus}
 			/>
 		)
 	}
@@ -28,10 +29,15 @@ let mapStateToProps = (state) => {
 	return {
 		profilePage: state.profilePage,
 		profile: state.profilePage.profile,
-		isAuth: state.auth.isAuth
+		status: state.profilePage.status
 	}
 }
 
-let withUrlDataContainerComponent = withRouter(ProfileContainer);
+export default compose(
+	connect(mapStateToProps, { addPost, updateNewPostText, setLike, getProfile, getProfileStatus, updateProfileStatus }),
+	withRouter,
+)(ProfileContainer);
 
-export default connect(mapStateToProps, { addPost, updateNewPostText, setLike, getProfile })(withUrlDataContainerComponent);
+// let withUrlDataContainerComponent = withRouter(ProfileContainer);
+
+// export default withAuthRedirect(connect(mapStateToProps, { addPost, updateNewPostText, setLike, getProfile })(withUrlDataContainerComponent));

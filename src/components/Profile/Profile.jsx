@@ -3,7 +3,7 @@ import style from './Profile.module.scss';
 import Friends from './Friends/Friends';
 import MyPosts from './MyPosts/MyPosts';
 import Preloader from '../common/preloader/Preloader';
-// import { Redirect } from 'react-router-dom';
+import Status from '../Status/Status';
 
 
 const Avatar = (props) => {
@@ -19,6 +19,7 @@ const Desc = (props) => {
     return (
         <div className={style.description}>
             <h1>{props.profile.fullName}</h1>
+            <Status status={props.status} updateProfileStatus={props.updateProfileStatus}/>
             <span>{props.profile.aboutMe}</span>
             <p>Contacts</p>
             <ul>
@@ -41,6 +42,7 @@ class Profile extends React.Component {
         if (!this.props.profile) {
             return <Preloader />
         } else
+        
             return (
                 <section className={style.profile}>
                     <div className={style.profile__row}>
@@ -49,7 +51,7 @@ class Profile extends React.Component {
                             <Friends profilePage={this.props.profilePage} />
                         </div>
                         <div className={style.right}>
-                            <Desc profile={this.props.profile} />
+                            <Desc profile={this.props.profile} status={this.props.status} updateProfileStatus={this.props.updateProfileStatus} />
                             <MyPosts profile={this.props.profile} profilePage={this.props.profilePage} addPost={this.props.addPost} updateNewPostText={this.props.updateNewPostText} setLike={this.props.setLike} />
                         </div>
                     </div>

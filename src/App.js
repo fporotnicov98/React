@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './App.module.scss';
 import './normalize.scss';
-// import Header from './components/Header/Header';
 import { Route } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
@@ -31,7 +30,6 @@ const App = (props) => {
           </div>
         </div>
       </main>
-      {/* <Footer /> */}
     </div>
   )
 }
