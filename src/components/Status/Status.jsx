@@ -34,8 +34,8 @@ class Status extends React.Component {
             <div>
                 {
                     !this.state.editMode
-                        ? <label onDoubleClick={this.activateEditMode}>Status: {this.props.status || '------'}</label>
-                        : <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMode} type="text" value={this.state.status} />
+                        ? <label onDoubleClick={this.activateEditMode} className={style['text']}>Status: {this.props.status || '------'}</label>
+                        : <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMode} className={style['status']} type="text" value={this.state.status} />
                 }
             </div>
         )

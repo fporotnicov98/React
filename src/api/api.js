@@ -30,6 +30,14 @@ export const authApi = {
     getAuth() {
         return instance.get(`/auth/me`)
             .then(Response => Response.data)
+    }, 
+    login() {
+        return instance.post(`/auth/login`)
+            .then(Response => Response.data)
+    },
+    logout() {
+        return instance.delete(`/auth/login`)
+            .then(Response => Response.data)
     }
 }
 

@@ -1,4 +1,5 @@
 import { authApi } from "../api/api";
+import { logDOM } from "@testing-library/react";
 
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA';
 
@@ -10,7 +11,6 @@ let initialState = {
 };
 
 const authReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case SET_AUTH_USER_DATA:
             return {
@@ -25,7 +25,6 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (id, email, login) => ({ type: SET_AUTH_USER_DATA, data: { id, email, login } })
 export default authReducer;
-
 
 export const getAuth = () => (dispatch) => {
     authApi.getAuth().then(data => {
